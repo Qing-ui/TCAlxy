@@ -143,7 +143,7 @@ class CarbonOnlyScorerGUI:
 
 
 class CarbonResultVisualizer:
-    """Carbon scoring result visualization handler (修正数据库连接问题版本)"""
+    """Carbon scoring result visualization handler """
 
     def __init__(self, db_path: str, top_results: List[Tuple]):
         self.db_path = db_path
@@ -281,7 +281,7 @@ class CarbonResultVisualizer:
         drawer.DrawRect(
             Geometry.Point2D(0, 0),
             Geometry.Point2D(1, 1),
-            True  # rawCoords=True表示使用画布坐标系
+            True  # rawCoords=True
         )
 
         drawer.FinishDrawing()
@@ -379,8 +379,7 @@ class ResultViewer:
         self.render_items()
 
     def render_items(self):
-        """渲染当前页的6个结果项"""
-        # 清空当前内容
+
         for widget in self.grid_frame.winfo_children():
             widget.destroy()
 
@@ -427,7 +426,7 @@ class ResultViewer:
 
 
     def show_detail(self, mol_id):
-        """修复struct_img_type未定义问题"""
+  
         detail_win = tk.Toplevel(self.top)
         detail_win.title("Molecule details")
         detail_win.geometry("1200x800")
@@ -436,8 +435,7 @@ class ResultViewer:
         # 初始化结构图类型选择控件
         self.struct_img_type = tk.StringVar(value="indices")
 
-        # 顶部信息栏
-        # 顶部信息栏
+
         header_frame = tk.Frame(detail_win, bg='#2C3E50')
         header_frame.pack(fill=tk.X, padx=10, pady=10)
 
